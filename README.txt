@@ -1,7 +1,7 @@
 ORIGINLE PAYWALL PROJECT
 
 1) Upload all files to your Vercel project.
-2) In Stripe, create a one-time £1.99 Price and copy the price ID.
+2) In Stripe, create a one-time £0.99 Price and copy the price ID.
 3) In Vercel > Project Settings > Environment Variables add:
    STRIPE_SECRET_KEY=sk_live_...
    STRIPE_PRICE_ID=price_...
