@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Originle — Unlocking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#1a1a1a;--parchment:#f5f0e8;--parchment-deep:#e5ddd0;--accent:#c2703e;--muted:#8a8279;}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--parchment);color:var(--ink);font-family:'DM Sans',sans-serif;padding:24px}main{max-width:540px;text-align:center}h1{font-family:'Cormorant Garamond',serif;font-size:3rem;margin:0 0 .5rem}p{color:var(--muted);font-size:1rem;line-height:1.6} .spinner{width:42px;height:42px;border:3px solid var(--parchment-deep);border-top-color:var(--accent);border-radius:50%;margin:0 auto 20px;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="spinner"></div>
+    <h1>Payment received</h1>
+    <p>Unlocking your full Originle game now…</p>
+  </main>
+  <script>
+    const sessionId = new URLSearchParams(window.location.search).get('session_id');
+    if (!sessionId) {
+      document.querySelector('main').innerHTML = '<h1>Missing session</h1><p>Please return to the homepage and try again.</p>';
+    } else {
+      window.location.replace(`/api/confirm-session?session_id=${encodeURIComponent(sessionId)}`);
+    }
+  </script>
+</body>
+</html>

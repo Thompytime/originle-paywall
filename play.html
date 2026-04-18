@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Originle — Forenames</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#1a1a1a;--parchment:#f5f0e8;--parchment-deep:#e5ddd0;--accent:#c2703e;--accent-hover:#d4823f;--success:#2d8a5e;--success-bg:rgba(45,138,94,0.08);--error:#d44040;--error-bg:rgba(212,64,64,0.06);--muted:#8a8279;--clue-locked:#ddd8cf;--clue-active:#fffaf3;--shadow:rgba(26,26,26,0.06);--shadow-lg:rgba(26,26,26,0.15);}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;}header{width:100%;text-align:center;padding:1rem 1rem 0.6rem;border-bottom:1px solid var(--parchment-deep);}.logo-area{display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:0.1rem;}.logo-area svg{flex-shrink:0;}.logo-titles{text-align:left;}.logo-titles h1{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;letter-spacing:0.06em;color:var(--ink);line-height:1.1;}.logo-titles h1 span{color:var(--accent);}.logo-titles .subtitle{font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-top:0.05rem;}.header-meta{font-size:0.7rem;color:var(--muted);margin-top:0.15rem;}.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:var(--muted);margin-top:0.1rem;}.quiz-nav{display:flex;gap:0.3rem;justify-content:center;padding:0.5rem;flex-wrap:wrap;}.quiz-nav button{width:30px;height:30px;border-radius:50%;border:2px solid var(--parchment-deep);background:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.7rem;color:var(--muted);cursor:pointer;transition:all 0.2s;}.quiz-nav button:hover{border-color:var(--accent);color:var(--accent);}.quiz-nav button.active{background:var(--accent);color:white;border-color:var(--accent);}.quiz-nav button.completed{background:var(--success);color:white;border-color:var(--success);}.quiz-nav button.failed{background:var(--error);color:white;border-color:var(--error);}main{width:100%;max-width:560px;padding:0.6rem 1rem 2rem;display:flex;flex-direction:column;flex:1;}.top-actions{display:flex;justify-content:flex-end;gap:.5rem;margin-bottom:.55rem}.top-actions button{padding:.45rem .75rem;border-radius:10px;border:1.5px solid var(--parchment-deep);background:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.75rem;color:var(--ink);cursor:pointer}.top-actions button:hover{border-color:var(--accent);color:var(--accent)}.category-badge{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(194,112,62,0.1);padding:0.2rem 0.6rem;border-radius:100px;margin-bottom:0.5rem;align-self:flex-start;}.guess-history{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.4rem;min-height:0;}.guess-pill{display:inline-flex;align-items:center;gap:0.25rem;padding:0.2rem 0.55rem;border-radius:100px;font-size:0.75rem;font-weight:500;animation:pillPop 0.3s ease;}.guess-pill.wrong{background:var(--error-bg);border:1.5px solid var(--error);color:var(--error);}.guess-pill.correct{background:var(--success-bg);border:1.5px solid var(--success);color:var(--success);}@keyframes pillPop{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}.guess-area{margin-bottom:0.6rem;}.guess-input-row{display:flex;gap:0.4rem;}.guess-input-row input{flex:1;padding:0.65rem 0.8rem;border:2px solid var(--parchment-deep);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;background:white;color:var(--ink);outline:none;transition:border-color 0.2s;}.guess-input-row input:focus{border-color:var(--accent);}.guess-input-row button{padding:0.65rem 1.1rem;border:none;border-radius:10px;background:var(--accent);color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;transition:background 0.2s;}.guess-input-row button:hover{background:var(--accent-hover);}.guess-input-row button:disabled{background:var(--clue-locked);cursor:not-allowed;}.guesses-remaining{text-align:center;font-size:0.72rem;color:var(--muted);margin-top:0.35rem;}.clues-container{display:flex;flex-direction:column;gap:0.3rem;}.clue-row{border-radius:8px;background:var(--clue-locked);transition:all 0.3s ease;opacity:0.4;overflow:hidden;}.clue-row.revealed{background:var(--clue-active);opacity:1;box-shadow:0 1px 6px var(--shadow);}.clue-header{display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.75rem;cursor:pointer;user-select:none;}.clue-row:not(.revealed) .clue-header{cursor:default;}.clue-number{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--accent);min-width:1.1rem;}.clue-summary{font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:500;color:var(--muted);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.clue-row.revealed .clue-summary{color:var(--ink);}.clue-row:not(.revealed) .clue-summary{filter:blur(4px);}.clue-chevron{font-size:0.6rem;color:var(--muted);transition:transform 0.2s;margin-left:auto;}.clue-row:not(.revealed) .clue-chevron{visibility:hidden;}.clue-row.open .clue-chevron{transform:rotate(180deg);}.clue-body{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;padding:0 0.75rem;}.clue-row.open .clue-body{max-height:200px;padding:0 0.75rem 0.65rem;}.clue-body-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;line-height:1.5;color:var(--ink);}.share-bar{display:none;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.6rem;padding:0.5rem;background:white;border-radius:10px;box-shadow:0 2px 8px var(--shadow);animation:fadeUp 0.4s ease;}.share-bar.visible{display:flex;}.share-bar-text{font-size:0.72rem;color:var(--muted);font-weight:500;}.share-bar button{padding:0.4rem 0.75rem;border:none;border-radius:8px;background:var(--accent);color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.75rem;cursor:pointer;transition:background 0.2s;}.share-bar button:hover{background:var(--accent-hover);}.share-bar .btn-info{background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:0.35rem 0.65rem;}.share-bar .btn-info:hover{background:rgba(194,112,62,0.08);}.modal-overlay{position:fixed;inset:0;background:rgba(26,26,26,0.5);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s ease;padding:0.75rem;}.modal-overlay.active{opacity:1;pointer-events:all;}.modal{background:var(--parchment);border-radius:16px;padding:1.4rem 1.4rem;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px var(--shadow-lg);transform:translateY(20px);transition:transform 0.3s ease;max-height:92vh;max-height:92dvh;overflow-y:auto;}.modal-overlay.active .modal{transform:translateY(0);}.modal-scroll-icon{margin-bottom:0.4rem;}.modal h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.1rem;}.modal h2.win{color:var(--success);} .modal h2.lose{color:var(--error);}.modal .modal-subtitle{font-size:0.82rem;color:var(--muted);margin-bottom:0.8rem;}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-bottom:0.8rem;}.stat-box{background:white;border-radius:8px;padding:0.45rem 0.3rem;box-shadow:0 2px 6px var(--shadow);}.stat-box .stat-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.2;}.stat-box .stat-label{font-size:0.58rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:0.05rem;}.modal-origin{padding:0.85rem;margin-bottom:0.8rem;background:rgba(194,112,62,0.06);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;text-align:left;}.modal-origin h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}.modal-origin p{font-family:'Cormorant Garamond',serif;font-size:0.9rem;line-height:1.55;color:var(--ink);}.share-text-preview{background:white;border-radius:8px;padding:0.65rem;font-family:monospace;font-size:0.7rem;line-height:1.45;text-align:left;color:var(--ink);margin-bottom:0.65rem;white-space:pre-line;box-shadow:0 2px 6px var(--shadow);}.modal-actions{display:flex;gap:0.4rem;}.modal-actions button{flex:1;padding:0.6rem 0.7rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.82rem;cursor:pointer;transition:all 0.2s;}.btn-share{background:var(--accent);color:white;border:none;} .btn-share:hover{background:var(--accent-hover);}.btn-close{background:white;color:var(--ink);border:2px solid var(--parchment-deep);} .btn-close:hover{border-color:var(--accent);}.copied-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:white;padding:0.5rem 1rem;border-radius:100px;font-size:0.8rem;font-weight:500;opacity:0;transition:all 0.3s ease;z-index:2000;pointer-events:none;}.copied-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}.loading-screen{display:grid;place-items:center;min-height:100vh;width:100%;padding:24px;text-align:center}.loading-screen h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;margin-bottom:.4rem}.loading-screen p{color:var(--muted);line-height:1.6}@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen">
+    <div>
+      <h1>Unlock check…</h1>
+      <p>Preparing the paid Originle archive.</p>
+    </div>
+  </div>
+
+  <div id="app" style="display:none;width:100%">
+    <header>
+      <div class="logo-area">
+        <svg width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="15" width="60" height="70" rx="4" fill="#f5f0e8" stroke="#c2703e" stroke-width="2.5"/>
+          <ellipse cx="50" cy="15" rx="34" ry="8" fill="#ebe4d6" stroke="#c2703e" stroke-width="2.5"/>
+          <ellipse cx="50" cy="85" rx="34" ry="8" fill="#ebe4d6" stroke="#c2703e" stroke-width="2.5"/>
+          <circle cx="16" cy="15" r="5" fill="#c2703e" opacity="0.2"/><circle cx="16" cy="85" r="5" fill="#c2703e" opacity="0.2"/>
+          <circle cx="84" cy="15" r="5" fill="#c2703e" opacity="0.2"/><circle cx="84" cy="85" r="5" fill="#c2703e" opacity="0.2"/>
+          <line x1="32" y1="32" x2="68" y2="32" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <line x1="32" y1="42" x2="62" y2="42" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          <line x1="32" y1="52" x2="66" y2="52" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <line x1="32" y1="62" x2="58" y2="62" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          <path d="M70 70Q74 60 72 50" stroke="#c2703e" stroke-width="1.5" fill="none" opacity="0.3"/>
+        </svg>
+        <div class="logo-titles">
+          <h1>Origin<span>le</span></h1>
+          <div class="subtitle">Forenames</div>
+        </div>
+      </div>
+      <div class="header-meta">Paid archive edition</div>
+      <div class="tagline">We don't name and shame, we name and explain.</div>
+    </header>
+
+    <nav class="quiz-nav" id="quizNav"></nav>
+
+    <main>
+      <div class="top-actions">
+        <button onclick="logoutAndReturn()">Log out on this browser</button>
+      </div>
+      <div class="category-badge" id="categoryBadge"></div>
+      <div class="guess-history" id="guessHistory"></div>
+      <div class="guess-area" id="guessArea">
+        <div class="guess-input-row">
+          <input type="text" id="guessInput" placeholder="Type a name..." autocomplete="off"/>
+          <button id="guessBtn" onclick="submitGuess()">Guess</button>
+        </div>
+        <p class="guesses-remaining" id="guessesRemaining"></p>
+      </div>
+      <div class="clues-container" id="cluesContainer"></div>
+      <div class="share-bar" id="shareBar">
+        <span class="share-bar-text">Game complete!</span>
+        <button class="btn-info" onclick="showModalAgain()">View Stats</button>
+        <button onclick="copyShare()">Share</button>
+      </div>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+      <div class="modal" id="resultModal"></div>
+    </div>
+    <div class="copied-toast" id="copiedToast">Copied to clipboard!</div>
+  </div>
+
+  <script>
+    const SK='originle_progress';
+    const TK='originle_stats';
+    let data=null,ci=0,gu=0,go=false,prog={},lastQ=null;
+    let st={played:0,won:0,streak:0,maxStreak:0,gd:[0,0,0,0,0,0]};
+
+    async function requirePaid() {
+      const res = await fetch('/api/session');
+      const session = await res.json();
+      if (!session.paid) {
+        window.location.replace('/');
+        return false;
+      }
+      return true;
+    }
+
+    async function loadDB(){
+      const res = await fetch('/quizzes.json');
+      const quizzes = await res.json();
+      data = { quizOrder: quizzes.map(q => q.id), quizzes };
+    }
+
+    function init(){
+      try{let s=localStorage.getItem(SK);if(s)prog=JSON.parse(s);}catch(e){}
+      try{let s=localStorage.getItem(TK);if(s)st=JSON.parse(s);}catch(e){}
+      ci=fnup();renderNav();loadQ(ci);
+      document.getElementById('loadingScreen').style.display='none';
+      document.getElementById('app').style.display='block';
+    }
+    function fnup(){for(let i=0;i<data.quizOrder.length;i++){if(!prog[data.quizOrder[i]])return i;}return 0;}
+    function sp(){try{localStorage.setItem(SK,JSON.stringify(prog));}catch(e){}}
+    function ss(){try{localStorage.setItem(TK,JSON.stringify(st));}catch(e){}}
+
+    function renderNav(){
+      const n=document.getElementById('quizNav');n.innerHTML='';
+      data.quizOrder.forEach((qid,idx)=>{
+        const b=document.createElement('button');b.textContent=idx+1;
+        if(idx===ci)b.classList.add('active');
+        if(prog[qid]?.won===true)b.classList.add('completed');
+        if(prog[qid]?.won===false)b.classList.add('failed');
+        b.onclick=()=>{ci=idx;loadQ(idx);renderNav();};
+        n.appendChild(b);
+      });
+    }
+
+    function loadQ(oi){
+      const qid=data.quizOrder[oi];
+      const q=data.quizzes.find(x=>x.id===qid);
+      if(!q)return;lastQ=q;
+      const ex=prog[qid];
+      gu=ex?ex.guesses.length:0;go=!!ex;
+
+      document.getElementById('categoryBadge').textContent=q.category+' Origin';
+
+      const c=document.getElementById('cluesContainer');c.innerHTML='';
+      q.clues.forEach((cl,i)=>{
+        const r=document.createElement('div');r.className='clue-row';
+        const rev=i===0||i<gu+1||go;
+        if(rev)r.classList.add('revealed');
+        const isLatest=rev&&(go?(i===q.clues.length-1):(i===Math.min(gu,5)));
+        if(isLatest)r.classList.add('open');
+        const sum=cl.length>50?cl.substring(0,50)+'…':cl;
+        r.innerHTML='<div class="clue-header" onclick="togClue(this)"><span class="clue-number">'+(i+1)+'</span><span class="clue-summary">'+sum+'</span><span class="clue-chevron">▼</span></div><div class="clue-body"><div class="clue-body-text">'+cl+'</div></div>';
+        c.appendChild(r);
+      });
+
+      const inp=document.getElementById('guessInput'),btn=document.getElementById('guessBtn'),rem=document.getElementById('guessesRemaining'),hist=document.getElementById('guessHistory'),sb=document.getElementById('shareBar');
+      inp.value='';hist.innerHTML='';
+      if(go&&ex){
+        ex.guesses.forEach(g=>addPill(g,q.answer));
+        inp.disabled=true;btn.disabled=true;rem.textContent='Completed';sb.classList.add('visible');
+      }else{
+        inp.disabled=false;btn.disabled=false;rem.textContent=(6-gu)+' guesses remaining';sb.classList.remove('visible');
+      }
+      inp.onkeydown=(e)=>{if(e.key==='Enter')submitGuess();};
+      if(!go)inp.focus();
+    }
+
+    function togClue(h){const r=h.parentElement;if(!r.classList.contains('revealed'))return;r.classList.toggle('open');}
+
+    function submitGuess(){
+      if(go)return;
+      const inp=document.getElementById('guessInput');
+      const g=inp.value.trim();if(!g)return;
+      const qid=data.quizOrder[ci];
+      const q=data.quizzes.find(x=>x.id===qid);
+      if(!prog[qid])prog[qid]={won:null,guesses:[]};
+      prog[qid].guesses.push(g);gu=prog[qid].guesses.length;
+      addPill(g,q.answer);inp.value='';
+
+      if(g.toLowerCase()===q.answer.toLowerCase()){endG(true,q,qid);return;}
+
+      const rows=document.querySelectorAll('.clue-row');
+      rows.forEach(r=>r.classList.remove('open'));
+      if(gu<6&&rows[gu]){rows[gu].classList.add('revealed');rows[gu].classList.add('open');}
+      document.getElementById('guessesRemaining').textContent=(6-gu)+' guesses remaining';
+
+      if(gu>=6){endG(false,q,qid);}else{sp();}
+    }
+
+    function endG(won,q,qid){
+      prog[qid].won=won;go=true;st.played++;
+      if(won){st.won++;st.streak++;if(st.streak>st.maxStreak)st.maxStreak=st.streak;st.gd[Math.max(0,gu-1)]++;}
+      else{st.streak=0;}
+      sp();ss();revAll();showModal(won,q);
+      document.getElementById('guessInput').disabled=true;
+      document.getElementById('guessBtn').disabled=true;
+      document.getElementById('guessesRemaining').textContent='Completed';
+      document.getElementById('shareBar').classList.add('visible');
+      renderNav();
+    }
+
+    function addPill(g,a){
+      const h=document.getElementById('guessHistory');
+      const p=document.createElement('div');
+      const ok=g.toLowerCase()===a.toLowerCase();
+      p.className='guess-pill '+(ok?'correct':'wrong');
+      p.innerHTML='<span>'+(ok?'✓':'✗')+'</span><span>'+g+'</span>';
+      h.appendChild(p);
+    }
+
+    function revAll(){document.querySelectorAll('.clue-row').forEach(r=>{r.classList.add('revealed');r.classList.remove('open');});}
+
+    function buildShare(won,num,gc){
+      const B='🟦',W='⬜',BK='⬛',A='◀';
+      let lines=[];
+      for(let r=1;r<=6;r++){let s='';for(let c=1;c<=6;c++)s+=c<=r?B:W;lines.push(s+' ('+r+')');}
+      lines.push(BK+BK+BK+BK+BK+BK+' (miss)');
+      lines[won?gc-1:6]+=(' '+A);
+      return '📜 Originle — Forenames #'+num+'\n'+(won?gc+'/6':'X/6')+'\n\n'+lines.join('\n')+'\n\noriginle.com';
+    }
+
+    function showModal(won,q){
+      lastQ=q;
+      const qid=data.quizOrder[ci],num=ci+1,gc=prog[qid].guesses.length;
+      const wp=st.played>0?Math.round((st.won/st.played)*100):0;
+      const stxt=buildShare(won,num,gc);
+      document.getElementById('resultModal').innerHTML=
+        '<div class="modal-scroll-icon"><svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="15" width="60" height="70" rx="4" fill="#f5f0e8" stroke="#c2703e" stroke-width="2.5"/><ellipse cx="50" cy="15" rx="34" ry="8" fill="#ebe4d6" stroke="#c2703e" stroke-width="2.5"/><ellipse cx="50" cy="85" rx="34" ry="8" fill="#ebe4d6" stroke="#c2703e" stroke-width="2.5"/><line x1="32" y1="35" x2="68" y2="35" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.4"/><line x1="32" y1="50" x2="62" y2="50" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.3"/><line x1="32" y1="65" x2="66" y2="65" stroke="#c2703e" stroke-width="2" stroke-linecap="round" opacity="0.4"/></svg></div>'+
+        '<h2 class="'+(won?'win':'lose')+'">'+(won?q.answer+'!':'The answer was '+q.answer)+'</h2>'+
+        '<p class="modal-subtitle">'+(won?'Well done — '+gc+'/6!':'Better luck next quiz!')+'</p>'+
+        '<div class="stat-grid"><div class="stat-box"><div class="stat-num">'+st.played+'</div><div class="stat-label">Played</div></div><div class="stat-box"><div class="stat-num">'+wp+'%</div><div class="stat-label">Win Rate</div></div><div class="stat-box"><div class="stat-num">'+st.streak+'</div><div class="stat-label">Streak</div></div></div>'+
+        '<div class="modal-origin"><h3>'+q.answer+'</h3><p>'+q.origin+'</p></div>'+
+        '<div class="share-text-preview" id="sharePreview">'+stxt+'</div>'+
+        '<div class="modal-actions"><button class="btn-close" onclick="closeModal()">Close</button><button class="btn-share" onclick="copyShare()">Share Results</button></div>';
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function showModalAgain(){
+      if(!lastQ)return;const qid=data.quizOrder[ci];
+      if(!prog[qid])return;showModal(prog[qid].won,lastQ);
+    }
+
+    function copyShare(){
+      const t=document.getElementById('sharePreview').textContent;
+      navigator.clipboard.writeText(t).then(toast).catch(()=>{
+        const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);toast();
+      });
+    }
+    function toast(){const t=document.getElementById('copiedToast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+    function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
+    function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+
+    async function logoutAndReturn(){
+      await fetch('/api/logout');
+      window.location.href='/';
+    }
+
+    async function boot() {
+      const paid = await requirePaid();
+      if (!paid) return;
+      await loadDB();
+      init();
+    }
+
+    boot();
+  </script>
+</body>
+</html>
